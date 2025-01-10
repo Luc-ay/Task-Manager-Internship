@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import userRoutes from './routes/user.routes.js'
+import taskRoute from './routes/task.routes.js'
 import connectDB from './config/db.js'
 
 dotenv.config()
@@ -10,7 +10,7 @@ connectDB()
 const app = express()
 
 app.use(express.json())
-app.use('/auth', userRoutes)
+app.use('/', taskRoute)
 
 const PORT = process.env.PORT || 5000
 
